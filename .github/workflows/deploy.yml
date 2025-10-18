@@ -29,13 +29,15 @@ jobs:
 
       - name: Build and Prepare
         run: |
-          # Copy website files to root for GitHub Pages
-          cp -r tyler_medical_app/* .
+          # Create deployment directory
+          mkdir -p /tmp/deployment
+          # Copy website files to deployment directory
+          cp -r tyler_medical_app/* /tmp/deployment/
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.'
+          path: /tmp/deployment
 
       - name: Deploy to GitHub Pages
         id: deployment
