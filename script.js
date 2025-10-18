@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (sidebarClose) {
         sidebarClose.addEventListener('click', function() {
-            sidebar.classList.add('active');
-            content.classList.add('active');
+            sidebar.classList.remove('active');
+            content.classList.remove('active');
         });
     }
     
