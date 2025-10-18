@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler's Medical Care Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-paw me-2"></i>Tyler's Care</h3>
+                <strong><i class="fas fa-paw"></i></strong>
+                <button type="button" class="close-sidebar d-lg-none ms-auto" id="sidebarClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#dashboard" data-bs-toggle="collapse" aria-expanded="false" class="dashboard-link">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#medications" data-bs-toggle="collapse" aria-expanded="false" class="medications-link">
+                        <i class="fas fa-pills"></i>
+                        Medications
+                    </a>
+                </li>
+                <li>
+                    <a href="#supplements" data-bs-toggle="collapse" aria-expanded="false" class="supplements-link">
+                        <i class="fas fa-leaf"></i>
+                        Supplements
+                    </a>
+                </li>
+                <li>
+                    <a href="#nutrition" data-bs-toggle="collapse" aria-expanded="false" class="nutrition-link">
+                        <i class="fas fa-utensils"></i>
+                        Nutrition
+                    </a>
+                </li>
+                <li>
+                    <a href="#interactions" data-bs-toggle="collapse" aria-expanded="false" class="interactions-link">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Interactions
+                    </a>
+                </li>
+                <li>
+                    <a href="#monitoring" data-bs-toggle="collapse" aria-expanded="false" class="monitoring-link">
+                        <i class="fas fa-heartbeat"></i>
+                        Monitoring
+                    </a>
+                </li>
+                <li>
+                    <a href="#optimization" data-bs-toggle="collapse" aria-expanded="false" class="optimization-link">
+                        <i class="fas fa-chart-line"></i>
+                        Optimization
+                    </a>
+                </li>
+                <li>
+                    <a href="#education" data-bs-toggle="collapse" aria-expanded="false" class="education-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        Education
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="#" class="download emergency-btn">
+                        <i class="fas fa-ambulance me-2"></i>Emergency Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ms-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#"><i class="fas fa-user me-1"></i>Owner Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-cog me-1"></i>Settings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card welcome-card">
+                            <div class="card-body">
+                                <h1 class="card-title"><i class="fas fa-paw me-2"></i>Welcome to Tyler's Care Portal</h1>
+                                <p class="card-text">Your comprehensive resource for managing Tyler's cardiac care, medications, supplements, and monitoring schedule.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Overview -->
+                <div id="dashboard" class="content-section active">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-tachometer-alt me-2"></i>Dashboard Overview</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Health Status Card -->
+                        <div class="col-md-4">
+                            <div class="card health-status-card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-heartbeat me-2"></i>Health Status</h5>
+                                    <div class="health-indicator">
+                                        <div class="status-circle stable"></div>
+                                        <span class="status-text">Stable</span>
+                                    </div>
+                                    <p class="card-text">Tyler is currently stable with good response to treatment.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Today's Tasks Card -->
+                        <div class="col-md-4">
+                            <div class="card tasks-card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-tasks me-2"></i>Today's Tasks</h5>
+                                    <ul class="task-list">
+                                        <li><i class="fas fa-check-circle text-success me-2"></i>Morning Medications - Completed</li>
+                                        <li><i class="fas fa-circle text-warning me-2"></i>Afternoon Supplements - Due at 11:00 AM</li>
+                                        <li><i class="fas fa-circle text-info me-2"></i>Evening Medications - Due at 6:00 PM</li>
+                                        <li><i class="fas fa-circle text-secondary me-2"></i>Weight Check - Pending</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Alerts Card -->
+                        <div class="col-md-4">
+                            <div class="card alerts-card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-exclamation-circle me-2"></i>Recent Alerts</h5>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        <strong>Bleeding Risk:</strong> Monitor for signs of bleeding with Dan Shen and Hawthorne Berry combination.
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        <strong>Next Appointment:</strong> Cardiology checkup scheduled for July 15th.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats Row -->
+                    <div class="row mt-4">
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body text-center">
+                                    <h3 class="stat-number">12</h3>
+                                    <p class="stat-label">Years Old</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body text-center">
+                                    <h3 class="stat-number">4</h3>
+                                    <p class="stat-label">Medications</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body text-center">
+                                    <h3 class="stat-number">5</h3>
+                                    <p class="stat-label">Supplements</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body text-center">
+                                    <h3 class="stat-number">7</h3>
+                                    <p class="stat-label">Days Until Next Checkup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medications Section -->
+                <div id="medications" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-pills me-2"></i>Medications</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card medication-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Furosemide</h5>
+                                    <p class="card-text"><strong>Class:</strong> Loop Diuretic (Sulfonamide derivative)</p>
+                                    <p class="card-text"><strong>Chemical Name:</strong> 4-Chloro-N-furfuryl-5-sulfamoylanthranilic acid</p>
+                                    <p class="card-text"><strong>Molecular Weight:</strong> 330.74 g/mol</p>
+                                    <p class="card-text"><strong>Chemical Structure:</strong> Anthranilic acid derivative with sulfonamide group</p>
+                                    <p class="card-text"><strong>Mechanism of Action:</strong> Inhibits Na-K-2Cl cotransporter in thick ascending loop of Henle, preventing sodium and chloride reabsorption</p>
+                                    <p class="card-text"><strong>Pharmacodynamics:</strong> Increases urine output with enhanced excretion of sodium, potassium, calcium, chloride, magnesium, and bicarbonate. Also acts as mild venodilator, decreasing systemic venous pressure</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Bioavailability 40-50% (oral), 86-91% protein bound, elimination half-life ~1 hour (IV), 6 hours (oral)</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Reduces fluid retention and decreases cardiac workload</p>
+                                    <p class="card-text"><strong>Dosage:</strong> As prescribed by veterinarian</p>
+                                    <p class="card-text"><strong>Timing:</strong> Morning meal with food</p>
+                                    <p class="card-text"><strong>Onset of Action:</strong> 60 minutes (oral), 5 minutes (IV)</p>
+                                    <p class="card-text"><strong>Duration:</strong> 6 hours (oral), 2-3 hours (IV)</p>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Monitor for signs of dehydration and electrolyte imbalances. Cats are more sensitive to furosemide than dogs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card medication-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pimobendan (Vetmedin)</h5>
+                                    <p class="card-text"><strong>Class:</strong> Inodilator (Benzimidazole-pyridazinone derivative)</p>
+                                    <p class="card-text"><strong>Chemical Name:</strong> (±)-4,5,6,7-Tetrahydro-6-oxo-3-[4-(2-oxo-1,2-dihydro-pyridin-3-yl)phenyl]-1H-pyridazin-3-one</p>
+                                    <p class="card-text"><strong>Molecular Weight:</strong> 334.4 g/mol</p>
+                                    <p class="card-text"><strong>Chemical Structure:</strong> Phenylbenzimidazole skeleton with pyridazinone ring</p>
+                                    <p class="card-text"><strong>Mechanism of Action:</strong> Dual mechanism - sensitizes cardiac myofilaments to calcium (positive inotropic effect) and inhibits phosphodiesterase III (vasodilatory effect)</p>
+                                    <p class="card-text"><strong>Pharmacodynamics:</strong> Increases ventricular contractility while reducing preload and afterload without increasing myocardial oxygen consumption</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> High oral bioavailability (~70%), extensively protein bound, metabolized by glucuronidation, elimination half-life 2-3 hours</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Improves heart contractions and reduces blood vessel resistance</p>
+                                    <p class="card-text"><strong>Dosage:</strong> As prescribed by veterinarian</p>
+                                    <p class="card-text"><strong>Timing:</strong> Morning meal with food</p>
+                                    <p class="card-text"><strong>Onset of Action:</strong> Rapid onset within 1 hour</p>
+                                    <p class="card-text"><strong>Duration:</strong> 6-8 hours</p>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Administer on empty stomach or with small amount of food for best absorption. Not for use in hypertrophic cardiomyopathy.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card medication-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Apoquel (Oclacitinib)</h5>
+                                    <p class="card-text"><strong>Class:</strong> Janus Kinase (JAK) Inhibitor</p>
+                                    <p class="card-text"><strong>Chemical Name:</strong> N-Cyclohexyl-4-methyl-3-{[4-methyl-3-(1H-pyrrolo[2,3-d]pyrimidin-4-yl)pyridin-2-yl]amino}benzenesulfonamide</p>
+                                    <p class="card-text"><strong>Molecular Weight:</strong> 467.56 g/mol</p>
+                                    <p class="card-text"><strong>Chemical Structure:</strong> Cyclohexylamino pyrrolo[2,3-d]pyrimidine derivative</p>
+                                    <p class="card-text"><strong>Mechanism of Action:</strong> Selectively inhibits JAK1 enzyme, blocking pro-inflammatory cytokine signaling (IL-2, IL-4, IL-6, IL-13, IL-31)</p>
+                                    <p class="card-text"><strong>Pharmacodynamics:</strong> Rapidly controls pruritus and inflammation by interrupting the itch-inflammatory cycle</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> High bioavailability (89%), rapidly absorbed with peak concentrations in <1 hour, elimination half-life 3-5 hours</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Controls allergic skin conditions and pruritus</p>
+                                    <p class="card-text"><strong>Dosage:</strong> As prescribed by veterinarian</p>
+                                    <p class="card-text"><strong>Timing:</strong> Evening meal with food</p>
+                                    <p class="card-text"><strong>Onset of Action:</strong> <1 hour</p>
+                                    <p class="card-text"><strong>Duration:</strong> 12-24 hours</p>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        Immunosuppressive effects - monitor for signs of infection. Not recommended for dogs <12 months or those with serious infections.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card medication-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Trazodone</h5>
+                                    <p class="card-text"><strong>Class:</strong> Serotonin Antagonist and Reuptake Inhibitor (SARI)</p>
+                                    <p class="card-text"><strong>Chemical Name:</strong> 2-[4-(3-Chlorophenyl)-1-piperazinyl]ethyl]-1,2,4-triazolo[4,3-a]pyridine</p>
+                                    <p class="card-text"><strong>Molecular Weight:</strong> 325.82 g/mol</p>
+                                    <p class="card-text"><strong>Chemical Structure:</strong> Triazolopyridine derivative, phenylpiperazine class</p>
+                                    <p class="card-text"><strong>Mechanism of Action:</strong> Blocks serotonin 2A receptors and inhibits serotonin reuptake, increasing synaptic serotonin levels</p>
+                                    <p class="card-text"><strong>Pharmacodynamics:</strong> Provides anxiolytic and mild sedative effects by increasing serotonin levels in brain synapses</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Rapid absorption, peak plasma concentration 0.3-1 hour, elimination half-life 3-7 hours, extensively metabolized to active metabolite m-CPP</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Anxiety management and mild sedation</p>
+                                    <p class="card-text"><strong>Dosage:</strong> As prescribed by veterinarian</p>
+                                    <p class="card-text"><strong>Timing:</strong> Evening meal with food</p>
+                                    <p class="card-text"><strong>Onset of Action:</strong> 30-60 minutes</p>
+                                    <p class="card-text"><strong>Duration:</strong> 3-12 hours</p>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        May enhance effects of other sedatives. Monitor for excessive drowsiness. Effects may take 2-4 weeks for full therapeutic benefit.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medication Schedule -->
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <div class="card schedule-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-clock me-2"></i>Medication Schedule</h3>
+                                    <div class="schedule-container">
+                                        <div class="schedule-item">
+                                            <div class="time">8:00 AM</div>
+                                            <div class="medications">
+                                                <span class="badge bg-primary">Furosemide</span>
+                                                <span class="badge bg-success">Pimobendan</span>
+                                            </div>
+                                            <div class="status">
+                                                <i class="fas fa-check-circle text-success"></i> Completed
+                                            </div>
+                                        </div>
+                                        <div class="schedule-item">
+                                            <div class="time">6:00 PM</div>
+                                            <div class="medications">
+                                                <span class="badge bg-warning">Apoquel</span>
+                                                <span class="badge bg-info">Trazodone</span>
+                                            </div>
+                                            <div class="status">
+                                                <i class="fas fa-circle text-secondary"></i> Pending
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-info mt-3">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        <strong>Administration Notes:</strong> 
+                                        <ul class="mb-0">
+                                            <li>Furosemide and Pimobendan should be given on empty stomach or with minimal food for optimal absorption</li>
+                                            <li>Apoquel and Trazodone can be given with food to reduce gastrointestinal upset</li>
+                                            <li>Separate herbal supplements from cardiac medications by 2-3 hours</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supplements Section -->
+                <div id="supplements" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-leaf me-2"></i>Herbal Supplements</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card supplement-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dan Shen (Salvia miltiorrhiza)</h5>
+                                    <p class="card-text"><strong>Botanical Family:</strong> Lamiaceae (Mint family)</p>
+                                    <p class="card-text"><strong>Active Compounds:</strong> Tanshinones (tanshinone I, tanshinone IIA, cryptotanshinone), salvianolic acids (salvianolic acid A, B), rosmarinic acid, dihydrotanshinone</p>
+                                    <p class="card-text"><strong>Molecular Mechanisms:</strong> Inhibits NF-κβ signaling pathway, modulates MAPK and Nrf2 pathways, inhibits IL-1, IL-6, and TNF-α expression</p>
+                                    <p class="card-text"><strong>Cardiovascular Effects:</strong> Coronary vasodilation, anti-platelet aggregation, inhibits low-density lipid oxidation, protects vascular endothelial cells by regulating VCAM-1, ICAM-1, TNF-α</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Poor bioavailability of lipophilic tanshinones, extensive metabolism by CYP450 enzymes</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Cardiovascular support with blood-thinning properties</p>
+                                    <p class="card-text"><strong>Benefits:</strong> Coronary vasodilation, anti-platelet aggregation, antioxidant effects</p>
+                                    <div class="alert alert-danger">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        Significant bleeding risk when combined with Hawthorne Berry.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card supplement-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hawthorne Berry (Crataegus)</h5>
+                                    <p class="card-text"><strong>Botanical Family:</strong> Rosaceae (Rose family)</p>
+                                    <p class="card-text"><strong>Active Compounds:</strong> Oligomeric procyanidins (procyanidin B2, B5, C1), flavonoids (epicatechin, hyperoside, quercetin, rutin, isoquercitrin), chlorogenic acid, triterpenoids (ursolic acid, corosolic acid, oleanolic acid, maslinic acid)</p>
+                                    <p class="card-text"><strong>Molecular Mechanisms:</strong> Antioxidant activity via free radical scavenging, inhibition of LDL oxidation, enhancement of cardiac contractility through calcium channel modulation</p>
+                                    <p class="card-text"><strong>Cardiovascular Effects:</strong> Coronary vasodilation, positive inotropic effects, increases cardiac antithrombin III, decreases liver factor X levels, shows antiplatelet activity</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Contains 20% oligomeric procyanidins (WS® 1442), absorbed in the gastrointestinal tract and distributed to target organs</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Cardiac support with blood-thinning properties</p>
+                                    <p class="card-text"><strong>Benefits:</strong> Coronary vasodilation, positive inotropic effects, antioxidant properties</p>
+                                    <div class="alert alert-danger">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        Significant bleeding risk when combined with Dan Shen.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card supplement-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Withannia (Ashwagandha)</h5>
+                                    <p class="card-text"><strong>Botanical Family:</strong> Solanaceae (Nightshade family)</p>
+                                    <p class="card-text"><strong>Active Compounds:</strong> Withanolides (withaferin A, withanolide A-D, withanone), withanosides (sitoindosides VII-X), alkaloids (withanine, somniferine, tropine), flavonoids</p>
+                                    <p class="card-text"><strong>Molecular Mechanisms:</strong> Inhibits NF-κβ and STAT pathways, blocks heat shock proteins in cancer cells, modulates GABA receptors, affects HPA axis activity</p>
+                                    <p class="card-text"><strong>Therapeutic Effects:</strong> Adaptogenic properties, anti-inflammatory (inhibits TNF-α, IL-1β, IL-6), neuroprotective (reduces β-amyloid aggregation), immunomodulatory effects</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Contains 0.001-1.5% withanolides by dry weight, bioactive compounds cross blood-brain barrier</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Stress reduction with indirect cardiovascular benefits</p>
+                                    <p class="card-text"><strong>Benefits:</strong> Adaptogen properties, anti-inflammatory effects, HPA axis regulation</p>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        May interact with Apoquel's immunosuppressive effects.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card supplement-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Passionflower</h5>
+                                    <p class="card-text"><strong>Botanical Family:</strong> Passifloraceae</p>
+                                    <p class="card-text"><strong>Active Compounds:</strong> Flavonoids (apigenin, quercetin, luteolin, chrysin, vitexin, isovitexin), alkaloids, phenolic acids (GABA, chlorogenic acid), C-glycosyl flavones</p>
+                                    <p class="card-text"><strong>Molecular Mechanisms:</strong> GABAergic modulation (induces GABA currents in hippocampal slices), binds to benzodiazepine sites of GABAA receptors, inhibits glutamate release and NMDA receptors</p>
+                                    <p class="card-text"><strong>Neurological Effects:</strong> Anxiolytic through GABA potentiation, neuroprotective through glutamate modulation, modulates opioidergic and nicotinic cholinergic systems</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Flavonoids absorbed in small intestine, crosses blood-brain barrier to exert CNS effects</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Anxiety relief and mild sedation</p>
+                                    <p class="card-text"><strong>Benefits:</strong> GABA enhancement, mood improvement, neuroprotection</p>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        May enhance sedative effects of Trazodone.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card supplement-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Milk Thistle (Silybum marianum)</h5>
+                                    <p class="card-text"><strong>Botanical Family:</strong> Asteraceae (Daisy family)</p>
+                                    <p class="card-text"><strong>Active Compounds:</strong> Silymarin (70-80% flavonolignans: silybin A & B, isosilybin A & B, silychristin, silydianin), taxifolin (flavonoid), unsaturated fatty acids (linoleic acid 39.7%, oleic acid 36.7%)</p>
+                                    <p class="card-text"><strong>Molecular Mechanisms:</strong> Antioxidant through free radical scavenging, inhibits lipid peroxidation, modulates inflammatory pathways by blocking NF-κβ, inhibits CYP3A4 and UGT enzymes</p>
+                                    <p class="card-text"><strong>Hepatoprotective Effects:</strong> Stabilizes hepatocyte membranes, stimulates protein synthesis, enhances glutathione levels, prevents toxin binding to liver cell receptors</p>
+                                    <p class="card-text"><strong>Pharmacokinetics:</strong> Poor bioavailability due to limited intestinal absorption, undergoes extensive first-pass metabolism, silybin is the most bioactive component</p>
+                                    <p class="card-text"><strong>Purpose:</strong> Liver protection and support</p>
+                                    <p class="card-text"><strong>Benefits:</strong> Hepatoprotective effects, antioxidant properties, potential to modulate drug metabolism</p>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        May alter metabolism of prescribed medications.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supplement Schedule -->
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <div class="card schedule-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-clock me-2"></i>Supplement Schedule</h3>
+                                    <div class="schedule-container">
+                                        <div class="schedule-item">
+                                            <div class="time">11:00 AM</div>
+                                            <div class="supplements">
+                                                <span class="badge bg-purple">Dan Shen</span>
+                                                <span class="badge bg-purple">Withannia</span>
+                                                <span class="badge bg-purple">Passionflower</span>
+                                                <span class="badge bg-purple">Hawthorne Berry</span>
+                                                <span class="badge bg-purple">Milk Thistle</span>
+                                            </div>
+                                            <div class="status">
+                                                <i class="fas fa-circle text-warning"></i> Due Soon
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-info mt-3">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Supplements should be administered 2-3 hours after cardiac medications to minimize interactions.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nutrition Section -->
+                <div id="nutrition" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-utensils me-2"></i>Nutrition & Diet</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Royal Canin Cardiac Care (CV) Diet</h3>
+                                    <p class="card-text">Specialized diet formulated for dogs with cardiac conditions, featuring low sodium content and enhanced cardiac nutrients.</p>
+                                    
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <h5>Nutritional Profile</h5>
+                                            <ul class="nutrition-list">
+                                                <li><strong>Sodium:</strong> 1.3g per kg (1300mg per 1000kcal)</li>
+                                                <li><strong>Potassium:</strong> 8g per kg (8000mg per 1000kcal)</li>
+                                                <li><strong>Magnesium:</strong> 1.5g per kg (1500mg per 1000kcal)</li>
+                                                <li><strong>Protein:</strong> 26%</li>
+                                                <li><strong>Fat:</strong> 20%</li>
+                                                <li><strong>Taurine:</strong> 1.5g per kg</li>
+                                                <li><strong>EPA/DHA:</strong> 2.5g per kg</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5>Benefits for Tyler</h5>
+                                            <ul class="benefits-list">
+                                                <li>Low Sodium: Helps prevent fluid retention</li>
+                                                <li>Enhanced Potassium: Counteracts furosemide-induced losses</li>
+                                                <li>Adequate Magnesium: Supports heart rhythm stability</li>
+                                                <li>Added Taurine: Supports cardiac muscle function</li>
+                                                <li>Moderate Protein: Reduces kidney stress</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Schedule -->
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-calendar-alt me-2"></i>Feeding Schedule</h3>
+                                    <div class="feeding-schedule">
+                                        <div class="schedule-row">
+                                            <div class="time">8:00 AM - Morning Meal</div>
+                                            <div class="details">
+                                                <p>• 1/2 cup Royal Canin Cardiac Care CV (approx. 50g)</p>
+                                                <p>• Medications: Furosemide and Pimobendan</p>
+                                                <p>• Fresh water available at all times</p>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <div class="time">11:00 AM - Afternoon Supplement</div>
+                                            <div class="details">
+                                                <p>• Herbal supplements (Dan Shen, Withannia, Passionflower, Hawthorne Berry, Milk Thistle)</p>
+                                                <p>• Separated from cardiac medications by 2-3 hours</p>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <div class="time">6:00 PM - Evening Meal</div>
+                                            <div class="details">
+                                                <p>• 1/2 cup Royal Canin Cardiac Care CV (approx. 50g)</p>
+                                                <p>• Medications: Apoquel and Trazodone</p>
+                                                <p>• Fresh water available at all times</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactions Section -->
+                <div id="interactions" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-exclamation-triangle me-2"></i>Drug & Herb Interactions</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">High-Risk Interaction Combinations</h3>
+                                    
+                                    <div class="alert alert-danger">
+                                        <h5><i class="fas fa-exclamation-triangle me-2"></i>Bleeding Risk: Dan Shen + Hawthorne Berry</h5>
+                                        <p>Both herbs have significant blood-thinning properties that create an additive anticoagulant effect, substantially increasing bleeding risk when combined with Tyler's cardiac medications.</p>
+                                        <p><strong>Recommendation:</strong> Discontinue one of these herbs or implement intensive monitoring protocols.</p>
+                                    </div>
+                                    
+                                    <div class="alert alert-warning">
+                                        <h5><i class="fas fa-exclamation-triangle me-2"></i>Sedation Risk: Trazodone + Passionflower</h5>
+                                        <p>The combination may result in excessive sedation, particularly before veterinary visits.</p>
+                                        <p><strong>Recommendation:</strong> Monitor for excessive sedation and adjust timing or dosages as needed.</p>
+                                    </div>
+                                    
+                                    <div class="alert alert-info">
+                                        <h5><i class="fas fa-info-circle me-2"></i>Liver Metabolism: Milk Thistle + Multiple Medications</h5>
+                                        <p>Milk Thistle affects liver drug metabolism, potentially altering how Tyler's medications are processed.</p>
+                                        <p><strong>Recommendation:</strong> Regular liver function monitoring with monthly tests initially.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interaction Matrix -->
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-th me-2"></i>Interaction Matrix</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered interaction-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Substance</th>
+                                                    <th>Furosemide</th>
+                                                    <th>Pimobendan</th>
+                                                    <th>Apoquel</th>
+                                                    <th>Trazodone</th>
+                                                    <th>Dan Shen</th>
+                                                    <th>Hawthorne Berry</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Dan Shen</strong></td>
+                                                    <td class="warning">Cardiovascular</td>
+                                                    <td class="warning">Cardiovascular</td>
+                                                    <td class="info">-</td>
+                                                    <td class="info">-</td>
+                                                    <td class="secondary">-</td>
+                                                    <td class="danger">Bleeding Risk</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Hawthorne Berry</strong></td>
+                                                    <td class="warning">Cardiovascular</td>
+                                                    <td class="warning">Cardiovascular</td>
+                                                    <td class="info">-</td>
+                                                    <td class="info">-</td>
+                                                    <td class="danger">Bleeding Risk</td>
+                                                    <td class="secondary">-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Withannia</strong></td>
+                                                    <td class="info">Mild</td>
+                                                    <td class="info">Mild</td>
+                                                    <td class="warning">Immunomodulation</td>
+                                                    <td class="info">Mild</td>
+                                                    <td class="info">-</td>
+                                                    <td class="info">-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Passionflower</strong></td>
+                                                    <td class="info">-</td>
+                                                    <td class="info">-</td>
+                                                    <td class="info">-</td>
+                                                    <td class="warning">Sedation</td>
+                                                    <td class="info">-</td>
+                                                    <td class="info">-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Milk Thistle</strong></td>
+                                                    <td class="info">Metabolism</td>
+                                                    <td class="info">Metabolism</td>
+                                                    <td class="info">Metabolism</td>
+                                                    <td class="info">Metabolism</td>
+                                                    <td class="info">Metabolism</td>
+                                                    <td class="info">Metabolism</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring Section -->
+                <div id="monitoring" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-heartbeat me-2"></i>Monitoring Plan</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card monitoring-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-sun me-2"></i>Daily Monitoring</h3>
+                                    <ul class="monitoring-list">
+                                        <li><i class="fas fa-weight me-2"></i>Weight (same time each day, before feeding)</li>
+                                        <li><i class="fas fa-tint me-2"></i>Water intake measurement and recording</li>
+                                        <li><i class="fas fa-utensils me-2"></i>Appetite observation and notes</li>
+                                        <li><i class="fas fa-running me-2"></i>General behavior and energy levels</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card monitoring-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-calendar-week me-2"></i>Weekly Monitoring</h3>
+                                    <ul class="monitoring-list">
+                                        <li><i class="fas fa-chart-line me-2"></i>Body condition score assessment</li>
+                                        <li><i class="fas fa-tint-slash me-2"></i>Hydration status (skin tent test)</li>
+                                        <li><i class="fas fa-smile me-2"></i>Owner assessment of overall well-being</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card monitoring-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-calendar-alt me-2"></i>Monthly Monitoring</h3>
+                                    <ul class="monitoring-list">
+                                        <li><i class="fas fa-vial me-2"></i>Blood work (electrolytes, kidney function, liver enzymes)</li>
+                                        <li><i class="fas fa-heartbeat me-2"></i>Blood pressure assessment</li>
+                                        <li><i class="fas fa-stethoscope me-2"></i>Cardiac evaluation (auscultation)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card monitoring-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-calendar-check me-2"></i>Quarterly Monitoring</h3>
+                                    <ul class="monitoring-list">
+                                        <li><i class="fas fa-heartbeat me-2"></i>Echocardiogram appointments</li>
+                                        <li><i class="fas fa-file-medical me-2"></i>Comprehensive health assessments</li>
+                                        <li><i class="fas fa-sync-alt me-2"></i>Treatment plan reviews and adjustments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monitoring Timeline -->
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-timeline me-2"></i>Monitoring Timeline</h3>
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="timeline-date">Daily</div>
+                                            <div class="timeline-content">
+                                                <h5>Weight & Hydration</h5>
+                                                <p>Track weight and water intake every morning</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-date">Weekly</div>
+                                            <div class="timeline-content">
+                                                <h5>Physical Assessment</h5>
+                                                <p>Body condition scoring and hydration checks</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-date">Monthly</div>
+                                            <div class="timeline-content">
+                                                <h5>Blood Work</h5>
+                                                <p>Complete panel including electrolytes and liver enzymes</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-date">Quarterly</div>
+                                            <div class="timeline-content">
+                                                <h5>Cardiology Review</h5>
+                                                <p>Echocardiogram and comprehensive evaluation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optimization Section -->
+                <div id="optimization" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-chart-line me-2"></i>Treatment Optimization</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Priority Recommendations</h3>
+                                    
+                                    <div class="recommendation-item">
+                                        <h5><i class="fas fa-tint me-2 text-danger"></i>Bleeding Risk Management</h5>
+                                        <p>Discontinue either Dan Shen or Hawthorne Berry due to their significant blood-thinning properties. Priority for discontinuation should be Hawthorne Berry, as its cardiovascular benefits overlap with Tyler's prescribed cardiac medications.</p>
+                                        <div class="alert alert-info">
+                                            <strong>Monitoring Protocol:</strong> Coagulation profiles (PT, PTT, platelet count) every 2 weeks for the first month, then monthly.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommendation-item mt-4">
+                                        <h5><i class="fas fa-heartbeat me-2 text-warning"></i>Cardiovascular Support Optimization</h5>
+                                        <p>Separate administration of cardiac medications (furosemide, pimobendan) from herbal supplements by at least 2-3 hours. Administer cardiac medications in the morning and evening, with herbal supplements at midday if continued.</p>
+                                        <div class="alert alert-info">
+                                            <strong>Monitoring Protocol:</strong> Blood pressure measurements at every veterinary visit and weekly weight monitoring at home.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommendation-item mt-4">
+                                        <h5><i class="fas fa-liver me-2 text-info"></i>Liver Health Monitoring</h5>
+                                        <p>Establish baseline liver function with comprehensive metabolic panel including ALT, AST, ALP, and bilirubin. Regular monitoring schedule with liver enzymes every 3 months initially.</p>
+                                        <div class="alert alert-info">
+                                            <strong>Monitoring Protocol:</strong> Liver enzymes every 3 months initially, extended interval to every 6 months if values remain stable.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommendation-item mt-4">
+                                        <h5><i class="fas fa-bed me-2 text-purple"></i>Sedation Assessment</h5>
+                                        <p>Monitor for excessive sedation from the combination of trazodone and Passionflower. Administer Passionflower at least 2 hours apart from trazodone.</p>
+                                        <div class="alert alert-info">
+                                            <strong>Monitoring Protocol:</strong> Daily assessment of alertness and responsiveness, with monthly veterinary evaluations.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Protocols -->
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-ambulance me-2"></i>Emergency Protocols</h3>
+                                    
+                                    <div class="emergency-item">
+                                        <h5><i class="fas fa-exclamation-circle me-2 text-danger"></i>Immediate Veterinary Contact Required</h5>
+                                        <ul class="emergency-list">
+                                            <li>Signs of active bleeding (bloody stools, urine, or vomit)</li>
+                                            <li>Severe lethargy or collapse</li>
+                                            <li>Difficulty breathing</li>
+                                            <li>Seizures or disorientation</li>
+                                            <li>Jaundice (yellowing of gums or eyes)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="emergency-item mt-4">
+                                        <h5><i class="fas fa-exclamation-triangle me-2 text-warning"></i>Urgent Veterinary Contact (within 24 hours)</h5>
+                                        <ul class="emergency-list">
+                                            <li>Excessive bruising</li>
+                                            <li>Persistent vomiting</li>
+                                            <li>Loss of appetite for more than 24 hours</li>
+                                            <li>Significant changes in behavior</li>
+                                            <li>Inability to urinate</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div id="education" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Educational Resources</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card education-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-heart me-2"></i>Cardiac Care Basics</h3>
+                                    <p>Understanding congestive heart failure in dogs and how medications work to support cardiac function.</p>
+                                    <ul class="education-list">
+                                        <li>Symptoms to watch for</li>
+                                        <li>How medications support heart function</li>
+                                        <li>Lifestyle considerations for cardiac patients</li>
+                                        <li>Exercise recommendations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card education-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-pills me-2"></i>Medication Education</h3>
+                                    <p>Understanding how each prescribed medication works and what to expect during treatment.</p>
+                                    <ul class="education-list">
+                                        <li>Mechanism of action for each drug</li>
+                                        <li>Expected benefits and timeline</li>
+                                        <li>Potential side effects and management</li>
+                                        <li>Drug interactions to be aware of</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card education-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-leaf me-2"></i>Herbal Supplement Information</h3>
+                                    <p>Benefits and risks of herbal supplements and how they interact with prescribed medications.</p>
+                                    <ul class="education-list">
+                                        <li>Benefits of each supplement for cardiac health</li>
+                                        <li>Risks associated with each supplement</li>
+                                        <li>Interaction profiles with medications</li>
+                                        <li>Signs that supplements may need adjustment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card education-card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-exclamation-circle me-2"></i>Owner Education Points</h3>
+                                    <p>Key signs to monitor at home and when to contact your veterinary team.</p>
+                                    <ul class="education-list">
+                                        <li>Signs of bleeding to monitor</li>
+                                        <li>Signs of hypotension to watch</li>
+                                        <li>Signs of liver issues</li>
+                                        <li>When to contact the veterinarian</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-book-medical me-2"></i>Additional Resources</h3>
+                                    <div class="resources-container">
+                                        <div class="resource-item">
+                                            <h5><i class="fas fa-file-pdf me-2"></i>Royal Canin Cardiac Care CV Product Information</h5>
+                                            <p>Detailed nutritional information and feeding guidelines for Tyler's specialized diet.</p>
+                                        </div>
+                                        <div class="resource-item mt-3">
+                                            <h5><i class="fas fa-globe me-2"></i>ACVIM Guidelines for Cardiac Nutrition</h5>
+                                            <p>Professional veterinary guidelines for nutrition management in cardiac patients.</p>
+                                        </div>
+                                        <div class="resource-item mt-3">
+                                            <h5><i class="fas fa-user-md me-2"></i>Veterinary Nutritionist Consultation</h5>
+                                            <p>Information on specialized nutritional support for cardiac patients.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
